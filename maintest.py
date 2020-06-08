@@ -1,4 +1,10 @@
-from querycreator import queryCaseStatements, createIndTab
+'''
+This script provides generic input that will be provided to the 
+different modules created in this repository
+'''
+
+from querycreator import indicatorCaseStatements
+from createTables import createIndTab
 
 ''' 
 Columns will be a map that will be created as:
@@ -6,11 +12,12 @@ Columns will be a map that will be created as:
                      {'Dependencies':[<ListOfColumnsThatAreRequiredToBuildIndicator>], 
                         'Versions':[<DifferentVersionsInWhichToExist]}}
 ''' 
-columns = {'AnyRebTrigger': {'Dependencies': 'RebTrigger', 'Versions': [3,6,12,24,-1]},
+columns = {'AnyCustContact': {'Dependencies': 'CustContact', 'Versions': [3,6,12,24,-1]},
            'AnySales': {'Dependencies': 'Sales', 'Versions': [3,6,9,12,24]} }
 
 outdata = {'schema': 'schmtest', 'table': 'tabletest'}
-primarycols = [('FacilityID', 'varchar (255)'), ('MeasurementPeriodID', 'int')]
+primarycols = [('CustID', 'varchar (255)'), ('TimePeriod', 'int')]
 
-print(queryCaseStatements(columns))
+print(indicatorCaseStatements(columns))
 print(createIndTab(outdata, primarycols, columns))
+
