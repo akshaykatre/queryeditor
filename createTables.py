@@ -34,9 +34,12 @@ def createIndTab(outdata_connection, primcols, columns):
     TO DO: 
         - Account for when the server and database name is also provided
         - Make the drop statement optional? 
+        - Flexible data types for different indicators? 
     ''' 
     indicatorcols = AttributeNameCreator(columns)
     #indicatormap = {'collist': indicatorcols}
+    ## This states the data type of the indicator; At this point, all indicators can have 
+    ## only one data type 
     indicatorstatement = ' bit, \n'.join(indicatorcols) + ' bit'
     if 'schema' not in outdata_connection.keys():
         print("Setting the schema to dbo")
