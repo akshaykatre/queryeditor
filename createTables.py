@@ -30,6 +30,10 @@ def createIndTab(outdata_connection, primcols, columns):
                               'database': <dbname>,
                               'schema': <schemaname>,
                               'table': <tablename>}
+
+    TO DO: 
+        - Account for when the server and database name is also provided
+        - Make the drop statement optional? 
     ''' 
     indicatorcols = AttributeNameCreator(columns)
     #indicatormap = {'collist': indicatorcols}
@@ -39,8 +43,8 @@ def createIndTab(outdata_connection, primcols, columns):
         outdata_connection.update({'schema': 'dbo'}) 
     primstatement = primarystatement(primcols)
     cstatement = ''' 
-        DROP TABLE IF EXISTS {schema}.{table} \n
-        create table {schema}.{table}(
+        DROP TABLE IF EXISTS {outschema}.{outtable} \n
+        create table {outschema}.{outtable}(
             {0},
             {1}
         )

@@ -29,7 +29,6 @@ def AttributeNameCreator(columns):
 __author__ = 'Akshay Katre'
 __copyright__ = 'Copyright 2020, Query Builder'
 __credits__ = ['Akshay Katre']
-__license__ = 'MIT License'
 __version__ = '0.1'
 #__maintainer__ = '{maintainer}'
 __email__ = 'akshaykatre@gmail.com'
