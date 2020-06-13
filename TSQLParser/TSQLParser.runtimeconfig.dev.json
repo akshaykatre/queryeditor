@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\segul\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\segul\\.nuget\\packages"
+    ]
+  }
+}
